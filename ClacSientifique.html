@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	body{
+		background-color:white;
+		 
+		margin: 0;
+		padding: 0;
+		
+	}
+	#calculator{
+		position: relative;
+		 margin:0 auto;
+		 top: 50px;
+		 border-radius:20px; 
+		 width: 600px;
+		 height: 500px;
+		 background-color: white;
+		 
+		box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);}
+
+		#vv{
+			height: 30px;
+
+		}
+		#btnn{
+			margin: 10px 20px;
+			float: left;
+			padding: 5px 20px;
+			border-radius: 15px;
+			border: none;
+			font-size: 18px;
+			color:black;
+			background-color: #EDEDED;
+		}
+		#dark{
+			float: right;
+			margin: 10px;
+			padding: 5px 20px;
+
+		}
+
+		.history #history_value{
+		    height: 25px ;
+			width: 97%;
+			margin-top: 46px;
+            margin-left:1px;
+            margin-right: 1px; 
+    	    text-align: right;	
+			color: gray;
+			font-size: 18px;
+			border:none;
+			outline: none;
+			
+		}
+		.output #output_value{
+			
+			height: 50px;
+			width:97%;
+			margin: 1px 1px; 
+    	    padding-top: 5px;
+    	    text-align: right;	
+			color: black;
+			font-size: 37px;
+			border:none;
+			outline: none;
+		}
+		#copy{
+			height: 50px;
+		}
+		#btnn1{
+			margin: 0 10px;
+			float: left;
+			padding: 5px 20px;
+			border-radius: 15px;
+			border: none;
+			font-size: 18px;
+			color: black;
+			background-color: #EDEDED;
+		}
+		.clear{
+    	    float: right;
+			padding: 5px 20px;
+			background-color:white;
+			color: black;
+			border: none;
+			font-size: 18px;
+			margin:0 20px;
+			width: 20px;}
+
+
+
+#btn_number{
+		background-color: white;
+		color: black;
+		cursor: pointer;
+		font-family:serif;
+		font-size: 19px;
+		margin:10px 20px;
+		width: 50px;
+		height: 30px;
+	   border: none
+	}
+	#btn_operation {
+		background-color:#FAF0EF ;
+		opacity: 0.9;
+		color: #FF0000;
+		cursor: pointer;
+		font-family:serif;
+		font-size: 19px;
+		margin:10px 20px;
+		width: 55px;
+		height: 30px;
+	   border: none;
+	   box-shadow: 0px 1px 3px rgba(0, 0, 0, .5);
+	   border-radius: 3px;
+	}
+
+	#equal{
+		background-color:#FF0000;
+		opacity: 1;
+		color:white;
+	}
+
+
+
+    /*darkmode*/
+
+    /*dark calculator/*/
+	
+	.dark #calculator{
+		
+		 background-color: black;
+		box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);}
+		
+		
+		
+		.dark .history #history_value{
+		    background-color: black;
+    	    color:gray;
+		}
+		
+		.dark .output  #output_value{
+			color: white; 
+			background-color: black;
+		}
+		
+		.dark #copy{
+			height: 50px;
+		}
+		.dark #btnn{background-color: #313131;
+			color: white;
+		opacity: 0.9;}
+		.dark #btnn1{
+			margin: 0 10px;
+			float: left;
+			padding: 5px 15px;
+			border-radius: 15px;
+			border: none;
+			font-size: 18px;
+			color: white;
+			background-color: #313131;
+			opacity: 0.9;
+		}
+		.dark .clear{
+    	    
+			background-color: black;
+			color: white;
+			
+		}
+		
+	
+	.dark #btn_number{ 
+
+		background-color: black;
+		color: white;
+		
+
+	}
+	.dark #btn_operation {
+		background-color:#251c1f;
+		opacity: 0.9;
+		color: #FF0000;  
+	}
+
+	.dark #equal{
+		background-color:#FF0000;
+		opacity: 1;
+		color:white;
+	}
+    
+      @media only screen and (max-width: 270px) {
+     #calculator{ 
+		width:100%;}
+}
+
+
+ </style>
+	<title>calculator Sientifique</title>
+</head>
+
+<body id="body" >
+  <div id="calculator">
+  	<div id="result">
+  		<div id="vv">
+  		<button id="btnn" ><a href="calculator.html">Sientifique</a></button>
+  			<button id="dark" class="fa">&#xf186;</button>
+  		</div>
+  		<div class="history"><input id="history_value" type="text"   ></div>
+  		<div class="output"><input id="output_value" type="text" ></div>
+
+  		<div id="copy">
+             <button id="btnn1" >Copy</button>
+            <button  class="clear" onclick="c()" id="btn_operation">C</button>
+  			
+  		 </div>
+  	</div>
+
+
+  	<div id="buttons">
+  		 
+  			<table>
+		<tr>
+		    <td><button  onclick="pow()" id="btn_operation" >x2 </button></td>
+		    <td><button  onclick="triblr()"  id="btn_operation" >x3</button></td>
+			<td><button  onclick="fact()" id="btn_operation"  >x!</button></td>
+			<td><button  onclick="ac()" id="btn_operation"  >AC</button></td>
+			<td><button  class="btn" id="btn_operation"  >%</button></td>
+			<td><button  class="btn" id="btn_operation"  >/</button></td>
+		</tr>
+		<tr>
+			
+			<td><button   onclick="cos()" id="btn_operation" >cos</button></td>
+			<td><button  onclick="sin()" id="btn_operation" >sin  </button></td>
+			<td><button  class="btn" id="btn_number" >7</button></td>
+			<td><button  class="btn" id="btn_number" >8</button></td>
+			<td><button  class="btn" id="btn_number" >9</button></td>
+			<td><button  class="btn" id="btn_operation" >*</button></td>
+		</tr>
+		
+		<tr>
+			
+			<td><button  onclick="tan()" id="btn_operation" >Tan</button></td>
+			<td><button  onclick="log()" id="btn_operation"  >Log</button></td>
+			<td><button  class="btn" id="btn_number">4</button></td>
+			<td><button  class="btn" id="btn_number">5</button></td>
+			<td><button  class="btn" id="btn_number">6</button></td>
+			<td><button  class="btn" id="btn_operation"  >+</button></td>
+		</tr>
+		<tr>
+			
+			<td><button  onclick="pi()" id="btn_operation"  >π</button></td>
+			<td><button  onclick="sqrt()" id="btn_operation"  >&radic;</button></td>
+			<td><button  class="btn" id="btn_number">1</button></td>
+			<td><button  class="btn" id="btn_number">2</button></td>
+			<td><button  class="btn" id="btn_number">3</button></td>
+			<td><button  class="btn" id="btn_operation" >-</button></td>
+		  
+		</tr>
+		<tr>
+		  
+		   
+		   <td><button  class="btn" id="btn_operation" >(</button></td>
+		   <td><button  class="btn" id="btn_operation" >)</button></td>
+		   <td><button  class="btn" id="btn_number" >.</button></td>
+		   <td><button  class="btn" id="btn_number">0</button></td>	
+		   <td><button  class="btn" id="btn_number">00</button></td>
+		   <td ><button  onclick="output_value.value=eval(output_value.value) " id="btn_operation" >=</button></td>
+						
+		</tr>
+				</table>
+  	    
+					
+
+  	</div>
+
+
+
+
+  <!--	<div id="buttons">
+  		 
+  			<table>
+		<tr>
+		    <td><button  class="btn_operator"  id="X">x<span style="position: reletive; bottom: .4em; right: .1em;">2</span></button></td>
+		    <td><button  class="btn_operator"  id="AGEBRE">x3</button></td>
+			<td><button  class="btn_operator"  id="%">x!</button></td>
+			<td><button  class="btn_operator"  id="AC">AC</button></td>
+			<td><button  class="btn_operator"  id="%">%</button></td>
+			<td><button  class="btn_operator"  id="/">&#247;</button></td>
+		</tr>
+		<tr>
+			
+			<td><button  class="btn_operator" id="cos">cos</button></td>
+			<td><button  class="btn_operator"  id="sin">sin</button></td>
+			<td><button  class="btn_number" id="7" >7</button></td>
+			<td><button  class="btn_number" id="8" >8</button></td>
+			<td><button  class="btn_number" id="9" >9</button></td>
+			<td><button  class="btn_operator"  id="*">*</button></td>
+		</tr>
+		
+		<tr>
+			
+			<td><button  class="btn_operator" id="Tan">Tan</button></td>
+			<td><button  class="btn_operator"  id="Log">Log</button></td>
+			<td><button  class="btn_number" id="4">4</button></td>
+			<td><button  class="btn_number" id="5">5</button></td>
+			<td><button  class="btn_number" id="6">6</button></td>
+			<td><button  class="btn_operator"  id="+">+</button></td>
+		</tr>
+		<tr>
+			
+			<td><button  class="btn_operator" id="pi">pi</button></td>
+			<td><button  class="btn_operator"  id="">&</button></td>
+			<td><button  class="btn_number" id="1">1</button></td>
+			<td><button  class="btn_number" id="2">2</button></td>
+			<td><button  class="btn_number" id="3">3</button></td>
+			<td><button  class="btn_operator"  id="-">-</button></td>
+		  
+		</tr>
+		<tr>
+		  
+		   
+		   <td><button  class="btn_operator"  id="(">(</button></td>
+		   <td><button  class="btn_operator"  id=")">)</button></td>
+		   <td><button  class="btn_number" id=".">.</button></td>
+		   <td><button  class="btn_number" id="0">0</button></td>	
+		   <td><button  class="btn_number" id="00">00</button></td>
+		   <td ><button  class="btn_operator" id="equal">=</button></td>
+						
+		</tr>
+				</table>
+  	    
+					
+
+  	</div>-->
+  </div>
+<script src="sienc.js"></script>
+
+	
+</body>
+	
+</html>
